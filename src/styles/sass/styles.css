@@ -1,0 +1,574 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Raleway:wght@300;400;500&family=Roboto:wght@300;400;500&display=swap");
+/*::::::::::::::::::::
+::::  CONSTANTS   ::::
+::::::::::::::::::::*/
+.fade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.75rem;
+  background-color: #32323288;
+}
+
+.city {
+  font-size: 1.5rem;
+}
+
+.m-05 {
+  margin: 0.5rem;
+}
+
+.p-05 {
+  padding: 0.5rem;
+}
+
+.data {
+  position: absolute;
+  bottom: 5rem;
+  left: 2rem;
+  -webkit-transform: translateY(25%);
+          transform: translateY(25%);
+  border-radius: 0.5rem;
+  background-color: #232323bb;
+  padding: 0.5rem;
+}
+
+.data .data-item {
+  margin: 0.5rem 0.25rem;
+}
+
+.data .data-item .h5, .data .data-item .temp {
+  margin: 0.25rem;
+}
+
+.rotate-180 {
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+}
+
+.trans-300 {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.bg-city {
+  background-image: url("../../img/city.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-dark {
+  background-color: #2e2e2e;
+}
+
+.color-light {
+  color: #fff;
+}
+
+.color-gray {
+  color: #777;
+}
+
+.color-light-gray {
+  color: #ababab;
+}
+
+.color-dark {
+  color: #2e2e2e;
+}
+
+.fw-600 {
+  font-weight: 600;
+}
+
+.fw-300 {
+  font-weight: 300;
+}
+
+.shadow-light {
+  -webkit-box-shadow: 3px 3px 9px #ccc;
+          box-shadow: 3px 3px 9px #ccc;
+}
+
+.shadow-dark {
+  -webkit-box-shadow: 3px 3px 9px #32323288;
+          box-shadow: 3px 3px 9px #32323288;
+}
+
+/*::::::::::::::::::::
+::::    STYLES    ::::
+::::::::::::::::::::*/
+.preload {
+  position: relative;
+  z-index: 20;
+  width: 100%;
+  height: 100vh;
+}
+
+.preload .loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.preload .loading h4 {
+  text-align: center;
+}
+
+.preload .loading progress[value] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border-radius: 0.50rem;
+  width: 10rem;
+  height: 1rem;
+}
+
+.preload .loading progress[value]::-webkit-progress-bar {
+  background-color: #eee;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+
+.preload .loading progress[value]::-webkit-progress-value {
+  border-radius: 2px;
+  background-position: -50px 0px;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 2.5rem;
+}
+
+.header .nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 90%;
+}
+
+.header .nav .language {
+  margin: 0.5rem;
+}
+
+.header .nav .language span {
+  margin: 0.4rem;
+  -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+
+.header .nav .theme {
+  margin: 0.5rem;
+}
+
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  padding: 1rem;
+  height: calc(100vh - 4.5rem);
+}
+
+.main .bg-day {
+  background-image: url("../../img/bogota2.jpg");
+}
+
+.main .bg-night {
+  background-image: url("../../img/bogota.jpg");
+}
+
+.main .main-banner {
+  position: relative;
+  border-radius: 0.75rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 90%;
+  height: 20rem;
+  margin: 3rem 1rem 1rem;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+}
+
+.main .main-banner .title {
+  position: absolute;
+  top: 20%;
+  left: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transform: translateY(-20%);
+          transform: translateY(-20%);
+  margin: 0;
+}
+
+.main .secondary {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 90%;
+}
+
+.main .secondary .forecast {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  border-radius: 0.75rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 31%;
+  height: 20rem;
+  margin: 1rem 0rem;
+  padding: 1rem;
+  color: #121212;
+  font-family: "Montserrat", sans-serif;
+}
+
+.main .secondary .forecast .cast-title {
+  display: block;
+  margin: 0;
+  padding: 0.5rem 0.5rem 0 0.5rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+
+.main .secondary .forecast .cast-title span {
+  font-weight: 500;
+}
+
+.main .secondary .forecast .cast-title::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #ababab;
+  margin: 1rem 0;
+}
+
+.main .secondary .forecast .days {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  margin: 0.25rem 0.25rem;
+  padding-bottom: 0.25rem;
+  width: 95%;
+}
+
+.main .secondary .forecast .days .sub-section {
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+}
+
+.main .secondary .forecast .days .sub-section .day {
+  margin: 0.25rem 0;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.35rem;
+  color: #1498d4;
+}
+
+.main .secondary .forecast .days .sub-section .temp-min, .main .secondary .forecast .days .sub-section .temp-max {
+  margin: 0.5rem 0.25rem;
+}
+
+.main .secondary .forecast .days .sub-section .description {
+  margin: 0.25rem 0;
+  font-family: "Raleway", sans-serif;
+  -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+
+.main .secondary .forecast .days .sub-section .temp-min, .main .secondary .forecast .days .sub-section .temp-max {
+  color: #fff;
+}
+
+.main .secondary .forecast .days .sub-section .temp {
+  color: #777;
+}
+
+.main .secondary .forecast .days .sub-section:nth-child(1), .main .secondary .forecast .days .sub-section:nth-child(3) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .secondary .forecast .days .sub-section:nth-child(1) {
+  width: 15%;
+}
+
+.main .secondary .forecast .days .sub-section:nth-child(2) {
+  width: 35%;
+}
+
+.main .secondary .forecast .days .sub-section:nth-child(3) {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: 0;
+  width: 30%;
+  margin: 0 0.5rem;
+  background-color: #1e3dc4;
+}
+
+.main .secondary .paris-banner {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  border-radius: 0.75rem;
+  background-image: url("../../img/paris.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 31%;
+  height: 20rem;
+  margin: 1rem 0rem;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+}
+
+.main .secondary .paris-banner .title {
+  position: relative;
+  z-index: 10;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 4rem;
+  border-radius: 0.75rem 0.75rem 0 0;
+  background-color: #232323bb;
+}
+
+.main .secondary .custom {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  border-radius: 0.75rem;
+  width: 31%;
+  height: 20rem;
+  margin: 1rem 0rem;
+  color: #121212;
+  font-family: "Montserrat", sans-serif;
+}
+
+.main .secondary .custom .title {
+  position: relative;
+  z-index: 10;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 4rem;
+  border-radius: 0.75rem 0.75rem 0 0;
+  background-color: #232323bb;
+  color: #fff;
+}
+
+.main .secondary .custom .title span {
+  padding: 0 1rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+}
+
+.main .secondary .custom .content {
+  position: relative;
+  z-index: 10;
+  padding: 1rem;
+  color: #fff;
+}
+
+.main .secondary .custom .content .button {
+  width: 100%;
+  padding: 0.5rem;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  background-color: #1498d4;
+  border: none;
+  border-radius: 5px;
+  -webkit-box-shadow: 2px 2px 6px #32323288;
+          box-shadow: 2px 2px 6px #32323288;
+}
+
+.main .secondary .custom .content .button:hover {
+  background-color: #20b7fd;
+}
+
+.main .secondary .custom .content .city {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  width: 95%;
+  margin: 0.25rem 0;
+}
+
+.main .secondary .custom .content .action-btn {
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  font-family: "Montserrat", sans-serif;
+  background-color: #1498d4;
+  color: #fff;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.main .secondary .custom .content .action-btn:hover {
+  background-color: #20b7fd;
+}
+
+.main .secondary .custom .content .show-place {
+  margin: 1rem 0;
+  background-color: #232323bb;
+  border-radius: 0.5rem;
+}
+
+.main .secondary .custom .content .show-place .first-set {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .secondary .custom .content .show-place .first-set .city {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.main .secondary .custom .content .show-place .sec-set {
+  padding: 0.25rem;
+}
+
+.main .secondary .custom .content .show-place .sec-set span:first-child {
+  margin: 0.25rem 0.5rem;
+}
+
+.main .secondary .custom .content .show-place .sec-set span {
+  margin: 0.25rem;
+}
+
+/*::::::::::::::::::::
+::  MEDIA QUERIES  :::
+::::::::::::::::::::*/
+@media screen and (max-width: 1250px) {
+  .main .secondary .forecast .days .sub-section .day {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .main {
+    height: auto;
+  }
+  .main .main-banner {
+    margin: 1rem;
+  }
+  .main .secondary .forecast, .main .secondary .custom {
+    width: 48%;
+  }
+  .main .secondary .paris-banner {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .main {
+    height: auto;
+  }
+  .main .main-banner {
+    margin: 1rem;
+  }
+  .main .secondary .forecast, .main .secondary .custom {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header .nav {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .main {
+    height: auto;
+  }
+  .main .main-banner {
+    margin: 1rem;
+  }
+  .main .secondary .forecast {
+    padding: 0.3rem;
+  }
+  .main .secondary .forecast .days .sub-section .day {
+    font-size: 0.9rem;
+  }
+  .main .secondary .forecast .days .sub-section .description {
+    font-size: 0.8rem;
+  }
+  .main .secondary .forecast .days .sub-section .temp-max, .main .secondary .forecast .days .sub-section .temp-min {
+    font-size: 0.8rem;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
